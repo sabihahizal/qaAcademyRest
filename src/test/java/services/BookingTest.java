@@ -1,5 +1,6 @@
 package services;
 
+import io.qameta.allure.Allure;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -167,10 +168,30 @@ public class BookingTest {
 
     }
 
+    /*
+    @Test
+    public void allure() {
+        String baseUrl = "https://restful-booker.herokuapp.com/booking";
+        RequestSpecification restAssuredReq = RestAssured.given()
+                .header("firstname","lastname")
+                .log()
+                .all(true);
+        Response response = restAssuredReq.get(baseUrl);
+        attachment(restAssuredReq, baseUrl, response);
+        Assert.assertEquals(response.getStatusCode(), 200);
+    }
 
 
+    public String attachment(RequestSpecification httpRequest, String baseUrl, Response response) {
+        String html = "Url = " + baseUrl + "\n \n" +
+                "Request Headers = " + ((RequestSpecificationImpl) httpRequest).getHeaders() + "\n \n" +
+                "Request Body = " + ((RequestSpecificationImpl) httpRequest).getBody() + "\n \n" +
+                "Response Body = " + response.getBody().asString();
+        Allure.addAttachment("Request Detail", html);
+        return html;
+    }
 
-
+*/
 
 
 
